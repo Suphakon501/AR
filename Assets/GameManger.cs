@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
         var enemy = Instantiate(enemyPrefab, randomPosition, Quaternion.identity);
         _spawnedEnemies.Add(enemy);
 
-        var enemyScript = enemy.GetComponent<EnemyScript>();
+        var enemyScript = enemy.GetComponentInChildren<EnemyScript>();
         if (enemyScript != null)
         {
             enemyScript.OnEnemyDestroyed += AddScore;
